@@ -42,7 +42,7 @@ func (c *Client) NewStoreObjectRequest(bucket, key string) *RpbPutReq {
 	}
 }
 
-func (c *Client) storeObject(opts *RpbPutReq, bucket, key string, in interface{}) (*RpbPutResp, error) {
+func (c *Client) StoreObjectWithOpts(opts *RpbPutReq, bucket, key string, in interface{}) (*RpbPutResp, error) {
 	if opts == nil {
 		opts = c.NewStoreObjectRequest(bucket, key)
 	}
