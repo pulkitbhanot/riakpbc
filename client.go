@@ -140,7 +140,7 @@ func (c *Client) Do(opts interface{}) (interface{}, error) {
 // DoObject executes a prepared query with data and returns the results.
 func (c *Client) DoObject(opts interface{}, in interface{}) (interface{}, error) {
 	if _, ok := opts.(*RpbPutReq); ok {
-		return c.storeObject(opts.(*RpbPutReq), string(opts.(*RpbPutReq).GetBucket()), string(opts.(*RpbPutReq).GetKey()), in)
+		return c.StoreObjectWithOpts(opts.(*RpbPutReq), string(opts.(*RpbPutReq).GetBucket()), string(opts.(*RpbPutReq).GetKey()), in)
 	}
 
 	return nil, nil

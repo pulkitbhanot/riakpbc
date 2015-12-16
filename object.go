@@ -93,7 +93,7 @@ func (c *Client) StoreObjectWithOpts(opts *RpbPutReq, bucket, key string, in int
 //
 // Use RpbContent if you need absolute control over what is going into Riak.
 func (c *Client) StoreObject(bucket, key string, in interface{}) (*RpbPutResp, error) {
-	return c.storeObject(nil, bucket, key, in)
+	return c.StoreObjectWithOpts(nil, bucket, key, in)
 }
 
 // NewDeleteObjectRequest prepares a DeleteObject request.
